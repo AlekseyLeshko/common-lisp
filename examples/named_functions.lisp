@@ -9,3 +9,4 @@
 (print (fib 3))
 
 (print (funcall #'fib 30))
+(print (apply #'fib (list 30)))
