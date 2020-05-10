@@ -1,0 +1,13 @@
+(defun many (n)
+  (values n (* n 2) (* n 3)))
+
+(print "====")
+(print (many 2))
+(print (multiple-value-list (many 3)))
+(print (nth-value 0 (many 2)))
+(print (multiple-value-bind (first second third)
+         (many 3)
+         (list first second third)))
+(print (multiple-value-bind (first second third)
+         (many 3)
+         (list third second first)))
