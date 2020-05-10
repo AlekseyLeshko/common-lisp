@@ -7,3 +7,5 @@
 
 (print (fib 30))
 (print (fib 3))
+
+(print (funcall #'fib 30))
