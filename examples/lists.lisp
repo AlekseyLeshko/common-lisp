@@ -28,3 +28,16 @@
 
 (print (my-map #'string-upcase (list "test" "first")))
 (print (my-map #'string-upcase ()))
+
+(print (reduce #'+ (list 1 2 3)))
+
+(print (reduce #'(lambda (a b)(* a b))(list 2 2 4)))
+
+(defparameter result
+  (reduce #'(lambda (a b)
+      (format t "A: ~A, B: ~A~%" a b)
+      (* a b))
+  (list 1 2 3 4 5 6)))
+
+(format t "~%~A: ~R" result result)
+(print result)
