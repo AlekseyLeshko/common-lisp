@@ -16,3 +16,15 @@
 (print my-list)
 (setf (second my-list) 70)
 (print my-list)
+
+(print (mapcar #'evenp (list 1 2 3 4 5 6)))
+(print (mapcar #'string-upcase (list "Hello" "world!")))
+
+(defun my-map (function list)
+  (if list
+    (cons (funcall function (first list))
+          (my-map function  (rest list)))
+    nil))
+
+(print (my-map #'string-upcase (list "test" "first")))
+(print (my-map #'string-upcase ()))
