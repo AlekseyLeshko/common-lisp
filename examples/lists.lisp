@@ -41,3 +41,10 @@
 
 (format t "~%~A: ~R" result result)
 (print result)
+
+
+(print (sort (list 9 2 4 7 3 0 8) #'<))
+(print (sort (list 9 2 4 7 3 0 8) #'>))
+(print (sort (list 9 2 4 7 3 0 8) #'(lambda (a b)
+  (format t "~A < ~A = ~A~%" a b (< a b))
+  (< a b))))
