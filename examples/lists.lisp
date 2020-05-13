@@ -48,3 +48,12 @@
 (print (sort (list 9 2 4 7 3 0 8) #'(lambda (a b)
   (format t "~A < ~A = ~A~%" a b (< a b))
   (< a b))))
+
+(defun destructure (list)
+  (destructuring-bind (first second &rest others)
+    list
+    (format t "First: ~A~%" first)
+    (format t "Second: ~A~%" second)
+    (format t "Rest: ~A~%" others)))
+
+(print (destructure (list 1 2 3 4 5 6)))
